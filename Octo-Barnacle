@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Website</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+      background: #121212;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(45deg, #1f1f1f, #3a3a3a);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      background: #1b1b1b;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #f04e30;
+    }
+
+    section {
+      display: none;
+      padding: 50px 20px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    #tech {
+      background: #202020;
+    }
+
+    #design {
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      color: #000;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .interactive {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 30px 0;
+    }
+
+    .interactive div {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      background: #f04e30;
+      border-radius: 10px;
+      animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-20px);
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #181818;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #f04e30;
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <p>Welcome to my portfolio. Explore my skills in tech and creativity!</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('tech')">Tech</a>
+    <a href="#" onclick="showSection('design')">Design</a>
+  </nav>
+
+  <section id="tech" class="active">
+    <div class="container">
+      <h2>Tech Skills</h2>
+      <p>I specialize in UI/UX design and front-end development. Below is an example of interactive elements:</p>
+      <div class="interactive">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="design">
+    <div class="container">
+      <h2>Creative Work</h2>
+      <p>Photography, graphic design, and creative UI mockups are my passion.</p>
+      <img src="https://via.placeholder.com/600x300" alt="Creative work example" style="width:100%; border-radius: 10px;">
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Your Name | Built with passion. <a href="https://github.com">GitHub</a></p>
+  </footer>
+
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section) => section.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
